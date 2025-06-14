@@ -7,7 +7,10 @@ from typing import Optional, Tuple
 
 import chainlit as cl
 
+from configuration import Configuration
 from orchestrator_client import call_orchestrator_stream
+
+config = Configuration()
 
 # Constants
 UUID_REGEX = re.compile(
@@ -30,7 +33,7 @@ TERMINATE_TOKEN = "TERMINATE"
 
 # Helpers
 def read_env_boolean(var_name: str, default: bool = False) -> bool:
-    value = os.getenv(var_name, str(default)).strip().lower()
+    value = config.get_value(var_name, str(default)).strip().lower()
     return value in {'true', '1', 'yes'}
 
 

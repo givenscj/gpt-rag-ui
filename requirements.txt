@@ -1,10 +1,14 @@
 fastapi
 uvicorn
-chainlit==2.4.0
+chainlit
 httpx
 msal
 python-dotenv
 azure-identity
 azure-storage-blob
-starlette 
+starlette
 itsdangerous
+azure.appconfiguration
+azure.appconfiguration.provider
+tenacity
+aiohttp
